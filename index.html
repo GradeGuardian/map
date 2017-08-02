@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GradeGuardian Map</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="http://52.14.34.73:5120/css/flat.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div id="app-content">
+        <nav class="navbar navbar-expand-lg navbar-dark aqua-gradient navbar-toggleable-md">
+            <div class="container">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleContainer"
+                    aria-controls="navbarsExampleContainer" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                <a class="navbar-brand white-text" href="#">Container</a>
+
+                <div class="collapse navbar-collapse" id="navbarsExampleContainer">
+
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="row text-left card map-container">
+                <div id="map"></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="card card-cascade narrower state-overview-card z-depth-2" id="overview-card" style="display: none">
+
+                    <!--Card image-->
+                    <div class="view gradient-card-header bg-unique">
+                        <h4 class="card-title"><strong><span id="overview-title">Card title</span></strong></h4>
+                    </div>
+                    <!--/Card image-->
+
+                    <div class="card-body text-center">
+                        <table style="width:100%">
+                            <tr>
+                                <td><strong>Literacy</strong></td>
+                                <td><i class="fa fa-user-o" aria-hidden="true"></i></i>&nbsp;<span id="literacy-person"></span>%</td>
+                                <td><i class="fa fa-mars" aria-hidden="true"></i>&nbsp;<span id="literacy-male"></span>%</td>
+                                <td><i class="fa fa-venus" aria-hidden="true"></i>&nbsp;<span id="literacy-female"></span>%</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            <hr>
+            <div class="col-xs-12 text-left jumbotron card">
+                <h1 class="text-center">Filters</h1><br>
+                <div id="filter-container"></div>
+            </div>
+
+
+
+            <!-- Spacer -->
+            <div style="height: 50px"></div>
+        </div>
+
+        <div class="modal fade" id="statsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content card z-depth-5">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <h2>This is a chart</h2>
+                        <canvas id="chart1"></canvas>
+                        <hr>
+
+                        <h2>This is another chart</h2>
+                        <canvas id="chart2"></canvas>
+                        <hr>
+
+                        <h2>These charts are nice, ja?</h2>
+                        <canvas id="chart3"></canvas>
+
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-elegant" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="http://52.14.34.73:5120/js/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+    <script src="http://52.14.34.73:5120/js/mdb.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js" integrity="sha256-SiHXR50l06UwJvHhFY4e5vzwq75vEHH+8fFNpkXePr0="
+        crossorigin="anonymous"></script>
+    <script src="js/raphael.min.js"></script>
+    <script src="js/getdata.js"></script>
+    <script src="js/charthandler.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/mapcontrols.js"></script>
+    <script src="js/pagescript.js"></script>
+</body>
+
+</html>

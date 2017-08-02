@@ -1,0 +1,71 @@
+body {
+    background-color: #EEEEEE !important;
+}
+
+path {
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+}
+
+#loading-screen {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: white;
+}
+
+#overview-card {
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+}
+
+.map-container {
+    margin-top: 20px;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding: 0 0 5px 0px;
+}
+
+#map svg {
+    padding: 5px;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+
+.state-overview-card {
+    position: absolute;
+    z-index: 5;
+    width: 450px !important;
+    right: 180px;
+    top: 600px;
+    margin-top: 50px !important;
+}
+
+@media (max-width:1200px){
+    .state-overview-card {
+        right: 20px;
+    }
+}
+
+@media (max-width:992px){
+    .state-overview-card {
+        margin-top: 20px;
+        margin-bottom: 40px;
+        position: relative;
+        z-index: auto;
+        width: 80vw;
+        top: 0;
+        right: 0;
+    }
+}
+
+@media (min-width: 768px) {
+  .modal-xl {
+    width: 90%;
+   max-width:1200px;
+  }
+}
