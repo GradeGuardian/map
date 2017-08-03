@@ -69,7 +69,7 @@ $(document).ready(() => {
         if($(this).is(':checked')) {
             calculateColorMap(facilitydata[data_id])
         } else {
-
+            revertColorMap()
         }
     })
     

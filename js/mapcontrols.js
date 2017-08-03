@@ -68,8 +68,9 @@ states.forEach(stateObj => {
     }
 
     stateObj.revertColor = () => {
-        stateObj.node.style.fill = color_gray
+        color_old = color_gray
         color_highlight = color
+        stateObj.node.style.fill = color_old
     }
 })
 
@@ -92,6 +93,7 @@ function calculateColorMap(data) {
 }
 
 function revertColorMap() {
+    console.log('reverting')
     states.forEach(stateObj => stateObj.revertColor())
 }
 
