@@ -37,10 +37,29 @@ path {
 }
 
 .state-overview-card {
-    width: 90% !important;
+    width: calc(100% - 30px) !important;
     margin-top: 60px !important;
     margin-bottom: 40px;
 }
+
+.legend {
+    width: 50px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.legend.green {
+    background-color: #4CAF50;
+}
+
+.legend.red {
+    background-color: #f44336;
+}
+
+.legend.yellow {
+    background-color: #FFC107;
+}
+
 
 @media (max-width:1200px){
 }

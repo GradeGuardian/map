@@ -18,7 +18,7 @@
 
 <body>
     <div id="app-content">
-        <nav class="navbar navbar-expand-lg navbar-dark aqua-gradient navbar-toggleable-md">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-unique navbar-toggleable-md">
             <div class="container">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleContainer"
                     aria-controls="navbarsExampleContainer" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,8 +33,22 @@
         </nav>
 
         <div class="container">
-            <div class="row text-left card map-container">
+            <div class="row text-center card map-container">
                 <div id="map"></div>
+                <div class="row">
+                    <div class="col-xs-6 col-md-4 pb-2">
+                        <div class="row justify-content-center">
+                            <div class="legend green z-depth-1"></div> Above Average</div>
+                    </div>
+                    <div class="col-xs-6 col-md-4 pb-2">
+                        <div class="row justify-content-center">
+                            <div class="legend yellow z-depth-1"></div> Average</div>
+                    </div>
+                    <div class="col-xs-6 col-md-4 pb-2">
+                        <div class="row justify-content-center">
+                            <div class="legend red z-depth-1"></div> Below Average</div>
+                    </div>
+                </div>
             </div>
 
             <div class="row justify-content-center">
@@ -85,24 +99,27 @@
                         </div>
 
                         <div class="row justify-content-center pt-3 pb-3">
-                            <button type="button" class="btn btn-outline-unique" data-toggle="modal" data-target="#statsModal">
-                            View more data
-                            </button>
+                            <div class="col-sm-12 col-md-6">
+                                <button type="button" class="btn btn-outline-unique" data-toggle="modal" data-target="#statsModal">View more data</button>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <button type="button" class="btn btn-elegant" data-toggle="modal" data-target="#predictionModal">Make a prediction</button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
             <hr>
+            <!-- Spacer -->
+            <div style="height: 50px"></div>
+        </div>
+
+        <div class="container">
             <div class="col-xs-12 text-left jumbotron card">
                 <h1 class="text-center">Filters</h1><br>
                 <div id="filter-container"></div>
             </div>
-
-
-
-            <!-- Spacer -->
-            <div style="height: 50px"></div>
         </div>
 
         <div class="modal fade" id="statsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
