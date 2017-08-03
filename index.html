@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GradeGuardian Map</title>
 
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
         crossorigin="anonymous">
@@ -47,13 +48,47 @@
 
                     <div class="card-body text-center">
                         <table style="width:100%">
-                            <tr>
-                                <td><strong>Literacy</strong></td>
-                                <td><i class="fa fa-user-o" aria-hidden="true"></i></i>&nbsp;<span id="literacy-person"></span>%</td>
+                            <tr class="pink-text">
+                                <td><strong><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;Literacy</strong></td>
+                                <td><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;<span id="literacy-person"></span>%</td>
                                 <td><i class="fa fa-mars" aria-hidden="true"></i>&nbsp;<span id="literacy-male"></span>%</td>
                                 <td><i class="fa fa-venus" aria-hidden="true"></i>&nbsp;<span id="literacy-female"></span>%</td>
                             </tr>
                         </table>
+
+                        <div id="filter-content" style="display: none">
+                            <hr>
+                            <h4 id="filter-title"></h4>
+                            <table class="pl-2 pr-2">
+                                <tr>
+                                    <td class="text-left"><strong>State</strong></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-right"><span id="filter-stat-state"></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left"><strong>National Average</strong></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-right"><span id="filter-stat-avg"></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left"><strong>Highest</strong></td>
+                                    <td class="text-center"><span id="filter-stat-high-name"></span></td>
+                                    <td class="text-right"><span id="filter-stat-high-data"></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left"><strong>Lowest</strong></td>
+                                    <td class="text-center"><span id="filter-stat-low-name"></span></td>
+                                    <td class="text-right"><span id="filter-stat-low-data"></span></td>
+                                </tr>
+                            </table>
+                            <hr>
+                        </div>
+
+                        <div class="row justify-content-center pt-3 pb-3">
+                            <button type="button" class="btn btn-outline-unique" data-toggle="modal" data-target="#statsModal">
+                            View more data
+                            </button>
+                        </div>
                     </div>
                 </div>
 

@@ -65,11 +65,15 @@ $(document).ready(() => {
 
     
     $(".chb").click(function () {
-        let data_id = $(this).attr('id')
+        activeDatafield = $(this).attr('id')
         if($(this).is(':checked')) {
-            calculateColorMap(facilitydata[data_id])
+            calculateColorMap(facilitydata[activeDatafield])
+            $('#filter-title').text($(this).siblings('label').text())
+            $('#filter-stat-state').text(facilitydata[activeDatafield]['2015'][activeState])
+            $('#filter-content').show()
         } else {
             revertColorMap()
+            $('#filter-content').hide()
         }
     })
     

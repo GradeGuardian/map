@@ -37,30 +37,15 @@ path {
 }
 
 .state-overview-card {
-    position: absolute;
-    z-index: 5;
-    width: 450px !important;
-    right: 180px;
-    top: 600px;
-    margin-top: 50px !important;
+    width: 90% !important;
+    margin-top: 60px !important;
+    margin-bottom: 40px;
 }
 
 @media (max-width:1200px){
-    .state-overview-card {
-        right: 20px;
-    }
 }
 
 @media (max-width:992px){
-    .state-overview-card {
-        margin-top: 20px;
-        margin-bottom: 40px;
-        position: relative;
-        z-index: auto;
-        width: 80vw;
-        top: 0;
-        right: 0;
-    }
 }
 
 @media (min-width: 768px) {
@@ -68,4 +53,15 @@ path {
     width: 90%;
    max-width:1200px;
   }
+}
+
+#filter-content table {
+    width: 90%;
+    margin-left: 20px;
+    margin-right: 20px;
+    table-layout: fixed;
+}
+
+#filter-content table td{
+    width: 33.3%;
 }

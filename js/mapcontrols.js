@@ -32,6 +32,9 @@ const stateNames = [
 
 const colorGradient = [ "#f44336", "#FF3D00", "#FF5722", "#EF6C00", "#FF9800", "#FFC107", "#FFEB3B", "#CDDC39", "#8BC34A", "#4CAF50", "#00C853"]
 
+var activeDatafield = null
+var activeState = null
+
 states.forEach(stateObj => {
 
     /* Styling */
@@ -42,23 +45,26 @@ states.forEach(stateObj => {
     let color_highlight = color
     stateObj.node.style.fill = color_gray
 
+    let persist = false
+
     stateObj.mouseover((e) => {
         stateObj.node.style.fill = color_highlight
         stateObj.node.style.cursor = 'pointer'
+    })
+
+    stateObj.mouseout((e) => {
+        stateObj.node.style.fill = color_old
+    })
+
+    stateObj.click((e) => {
+        persist = true
+        activeState = stateObj.data('name')
         $('#overview-card').show()
         $('#overview-title').text(stateObj.data('name'))
         $('#literacy-male').text(literacydata['2011'][stateObj.data('name')].Male)
         $('#literacy-female').text(literacydata['2011'][stateObj.data('name')].Female)
         $('#literacy-person').text(literacydata['2011'][stateObj.data('name')].Person)
-    })
-
-    stateObj.mouseout((e) => {
-        $('#overview-card').hide()
-        stateObj.node.style.fill = color_old
-    })
-
-    stateObj.click((e) => {
-        $('#statsModal').modal('toggle')
+        if(activeDatafield) $('#filter-stat-state').text(facilitydata[activeDatafield]['2015'][activeState])
     })
 
     stateObj.changeColor = (newColor) => {
@@ -77,11 +83,27 @@ states.forEach(stateObj => {
 function calculateColorMap(data) {
     let min = Number.MAX_VALUE
     let max = -1
+    let avg = data['2015']['National Average']
+
+    let min_state = null
+    let max_state = null
 
     stateNames.forEach(state => {
-        if (Number(data['2015'][state]) < Number(min)) min = data['2015'][state]
-        if (Number(data['2015'][state]) > Number(max)) max = data['2015'][state]
+        if (Number(data['2015'][state]) < Number(min)) {
+            min_state= state
+            min = data['2015'][state]
+        }
+        if (Number(data['2015'][state]) > Number(max)) {
+            max_state = state
+            max = data['2015'][state]
+        }
     })
+
+    $('#filter-stat-avg').text(Math.round( avg * 10 ) / 10)
+    $('#filter-stat-high-name').text(max_state)
+    $('#filter-stat-high-data').text(max)
+    $('#filter-stat-low-name').text(min_state)
+    $('#filter-stat-low-data').text(min)
 
     states.forEach(stateObj => {
         let value = data['2015'][stateObj.data('name')]
@@ -90,6 +112,8 @@ function calculateColorMap(data) {
         //console.log(colorIndex)
         stateObj.changeColor(colorGradient[colorIndex])
     })
+
+
 }
 
 function revertColorMap() {
