@@ -70,10 +70,10 @@ $(document).ready(() => {
             calculateColorMap(facilitydata[activeDatafield])
             $('#filter-title').text($(this).siblings('label').text())
             $('#filter-stat-state').text(facilitydata[activeDatafield]['2015'][activeState])
-            $('#filter-content').show()
+            $('#filter-content').show(600)
         } else {
             revertColorMap()
-            $('#filter-content').hide()
+            $('#filter-content').hide(600)
         }
     })
     
