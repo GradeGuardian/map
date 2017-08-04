@@ -1,9 +1,16 @@
 const XLSX = require('xlsx')
 const jsonfile = require('jsonfile')
+const csv = require('csvtojson')
 
 var workbook = XLSX.readFile('data.xlsx')
 var worksheet = workbook.Sheets[workbook.SheetNames[0]]
 worksheetdata = XLSX.utils.sheet_to_json(worksheet)
+
+csv()
+    .fromFile('PredictByState.csv')
+    .on("end_parsed", function (jsonArrayObj) { //when parse finished, result will be emitted here.
+        console.log(jsonArrayObj);
+    })
 
 var data = {}
 
@@ -90,7 +97,7 @@ colNames.forEach((colName, index) => {
 
                     if (state == "Uttarakhand") state = "Uttaranchal"
                     if (state == "Chhattisgarh") state = "Chhatisgarh"
-                        
+
                     if (rawData[colName] === undefined) {
                         data[datafield][year][state] = 'NA'
                     } else {
