@@ -232,6 +232,9 @@ $(document).ready(() => {
     })
 
     $('#predict-button').click(() => {
+        $('.prediction-results').hide(400)
+        $('.predict-result').hide()
+        
         let data = {}
         data.State = activeState
 
@@ -248,7 +251,29 @@ $(document).ready(() => {
             type: 'POST',
             url: 'http://159.203.94.60/predictByState',
             data: JSON.stringify(data),
-            success: function (data) { alert('data: ' + data); },
+            success: function (data) {
+                let currentRate = facilitydata['target']['2015'][activeState]
+                let val = data.Prediction.predictedValue
+                val = Number(val).toFixed(2)
+
+                $('.api-result').text(val)
+                $('.prediction-results').show(1000, () => {
+                    $('.current-do').slideDown(1000)
+                })
+
+                if( val > currentRate ) {
+                    console.log('higher', $('.predict-higher'))
+                    $('.predict-result').hide()
+                    $('.predict-higher').show("slow")
+                } else if ( val < currentRate ) {
+                    console.log('lower', $('.predict-lower'))
+                    $('.predict-result').hide()
+                    $('.predict-lower').show("slow")
+                } else {
+                    $('.predict-result').hide()
+                    $('.predict-same').show("slow")
+                }
+            },
             contentType: "application/json",
             dataType: 'json'
         });

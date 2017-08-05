@@ -62,11 +62,18 @@
 
                     <div class="card-body text-center">
                         <table style="width:100%">
-                            <tr class="pink-text">
+                            <tr class="green-text">
                                 <td><strong><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;Literacy</strong></td>
                                 <td><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;<span id="literacy-person"></span>%</td>
                                 <td><i class="fa fa-mars" aria-hidden="true"></i>&nbsp;<span id="literacy-male"></span>%</td>
                                 <td><i class="fa fa-venus" aria-hidden="true"></i>&nbsp;<span id="literacy-female"></span>%</td>
+                            </tr>
+
+                            <tr class="red-text">
+                                <td class="text-center"><strong><i class="fa fa-long-arrow-down" aria-hidden="true"></i>&nbsp;Dropout Rate</strong></td>
+                                <td></td>
+                                <td></td>
+                                <td class="text-center"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;<span class="dropout-rate"></span>%</td>
                             </tr>
                         </table>
 
@@ -106,6 +113,7 @@
                                 <button type="button" class="btn btn-elegant" data-toggle="modal" data-target="#predictionModal">Make a prediction</button>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
@@ -189,8 +197,7 @@
                                 </div>
                                 <div class="row justify-content-center hover-shadow">
                                     <h4 class="text-center" style="width: 100%;">Percentage schools with toilets for CWSN (Children With Special Needs)</h4>
-                                    <form class="range-field"
-                                        style="width: 70%"><input type="range" id="df5-predict" dataname="Schools with Toilet for CWSN" min="0"
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df5-predict" dataname="Schools with Toilet for CWSN" min="0"
                                             max="100"></form>
                                 </div>
                                 <div class="row justify-content-center hover-shadow">
@@ -305,6 +312,41 @@
                             <div class="row justify-content-center">
                                 <button class="btn btn-danger" id="reset-button">Reset&nbsp;<i class="fa fa-history ml-1"></i></button>
                                 <button class="btn btn-success" id="predict-button">Predict&nbsp;<i class="fa fa-eye ml-1"></i></button>
+                            </div>
+
+                            <div class="prediction-results">
+                                <hr>
+                                <div class="row h-100">
+                                    <div class="col text-center my-auto">
+                                        <h3>Predicted dropout rate:</h3>
+                                    </div>
+
+                                    <div class="col predict-result predict-higher red-text text-center">
+                                        <span class="api-result">69</span>%
+                                        <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+                                    </div>
+
+                                    <div class="col predict-result predict-same amber-text text-center">
+                                        <span class="api-result">69</span>%
+                                        –
+                                    </div>
+
+                                    <div class="col predict-result predict-lower green-text text-center">
+                                        <span class="api-result">69</span>%
+                                        <i class="fa fa-long-arrow-down" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+
+                                <div class="row h-100">
+                                    <div class="col text-center my-auto">
+                                        <h3>Current dropout rate:</h3>
+                                    </div>
+
+                                    <div class="col predict-result current-do indigo-text text-center">
+                                        <span class="dropout-rate"></span>%
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
 

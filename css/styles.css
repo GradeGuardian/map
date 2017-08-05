@@ -84,3 +84,7 @@ path {
 #filter-content table td{
     width: 33.3%;
 }
+
+.predict-result {
+    font-size: 60px;
+}
