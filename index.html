@@ -127,7 +127,7 @@
             <div class="modal-dialog modal-xl" role="document">
                 <div class="modal-content card z-depth-5">
                     <div class="modal-header bg-unique white-text">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle"><span class="title-state"></span></h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -158,7 +158,7 @@
             <div class="modal-dialog modal-xl" role="document">
                 <div class="modal-content card z-depth-5">
                     <div class="modal-header bg-elegant white-text">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle"><span class="title-state"></span></h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -166,7 +166,140 @@
                     <div class="modal-body">
 
                         <div class="container">
-                            <div class="datasliders"></div>
+                            <div class="datasliders">
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage single-classroom schools</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df0-predict" dataname="Single-Classroom Schools" min="0" max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage single-teacher schools</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df1-predict" dataname="Single-Teacher Schools" min="0" max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage schools with buildings</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df2-predict" dataname="Schools with Building" min="0" max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage schools with girls toilets</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df3-predict" dataname="Schools with Girls Toilet" min="0" max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage schools with boys toilets</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df4-predict" dataname="Schools with Boys Toilet" min="0" max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage schools with toilets for CWSN (Children With Special Needs)</h4>
+                                    <form class="range-field"
+                                        style="width: 70%"><input type="range" id="df5-predict" dataname="Schools with Toilet for CWSN" min="0"
+                                            max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage schools with drinking water</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df6-predict" dataname="Schools with Drinking Water" min="0" max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage schools with electricity</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df7-predict" dataname="Schools with Electricity" min="0" max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage schools with ramps, if needed</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df8-predict" dataname="Schools with Ramp if Needed" min="0" max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage schools with a library</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df9-predict" dataname="Schools with Library" min="0" max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage schools with a full time librarian</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df10-predict" dataname="Schools with Full time Librarian" min="0"
+                                            max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage schools with a boundary wall</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df11-predict" dataname="Schools with Boundary wall" min="0" max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage schools exclusively for CWSN</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df12-predict" dataname="Schools Exclusively for CWSN" min="0"
+                                            max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage schools with a lab assistant</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df13-predict" dataname="Schools with Lab. Assistant" min="0"
+                                            max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage schools with a Head Master Room</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df14-predict" dataname="Schools with Head Master Room" min="0"
+                                            max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage schools with a hostel for boys</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df15-predict" dataname="Schools with Hostel for Boys" min="0"
+                                            max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage schools with a hostel for girls</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df16-predict" dataname="Schools with Hostel for Girls" min="0"
+                                            max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage schools with computers and internet</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df17-predict" dataname="Schools with Computer &amp; Internet"
+                                            min="0" max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage schools with an ICT Laboratory</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df18-predict" dataname="Schools with ICT Laboratory" min="0"
+                                            max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage schools with a playground facility</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df19-predict" dataname="Schools with Playground Facility" min="0"
+                                            max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage schools which conducted medical check-ups</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df20-predict" dataname="Schools Conducted Med. Check-up" min="0"
+                                            max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage schools having SMDC</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df21-predict" dataname="Schools Having SMDC" min="0" max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage schools with a School Building Committee</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df22-predict" dataname="Schools with Sch. Bld. Committee" min="0"
+                                            max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage schools having a PTA</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df23-predict" dataname="Schools Having PTA" min="0" max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage schools sstablished since 2006</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df24-predict" dataname="Schools Established Since 2006" min="0"
+                                            max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Pupil-teacher ratio</h4>
+                                    <div class="md-form" style="width: 70%"><input class="text-center" id="df25-predict" dataname="Pupil-Teacher Ratio" type="text"
+                                            onkeypress="return isNumberKey(event)"></div>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Student-classroom ratio</h4>
+                                    <div class="md-form" style="width: 70%"><input class="text-center" id="df26-predict" dataname="Student-Classroom Ratio" type="text"
+                                            onkeypress="return isNumberKey(event)"></div>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage female teachers</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df28-predict" dataname="Female Teachers" min="0" max="100"></form>
+                                </div>
+                                <div class="row justify-content-center hover-shadow">
+                                    <h4 class="text-center" style="width: 100%;">Percentage girls enrolment</h4>
+                                    <form class="range-field" style="width: 70%"><input type="range" id="df29-predict" dataname="Girls Enrolment" min="0" max="100"></form>
+                                </div>
+                            </div>
                         </div>
 
                     </div>

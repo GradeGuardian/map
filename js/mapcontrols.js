@@ -59,12 +59,15 @@ states.forEach(stateObj => {
     stateObj.click((e) => {
         persist = true
         activeState = stateObj.data('name')
+        $('.title-state').text(activeState)
         $('#overview-card').show()
         $('#overview-title').text(stateObj.data('name'))
         $('#literacy-male').text(literacydata['2011'][stateObj.data('name')].Male)
         $('#literacy-female').text(literacydata['2011'][stateObj.data('name')].Female)
         $('#literacy-person').text(literacydata['2011'][stateObj.data('name')].Person)
         if(activeDatafield) $('#filter-stat-state').text(facilitydata[activeDatafield]['2015'][activeState])
+
+        setPredictionInputs()
     })
 
     stateObj.changeColor = (newColor) => {
