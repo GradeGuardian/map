@@ -6,12 +6,6 @@ var workbook = XLSX.readFile('data.xlsx')
 var worksheet = workbook.Sheets[workbook.SheetNames[0]]
 worksheetdata = XLSX.utils.sheet_to_json(worksheet)
 
-csv()
-    .fromFile('PredictByState.csv')
-    .on("end_parsed", function (jsonArrayObj) { //when parse finished, result will be emitted here.
-        console.log(jsonArrayObj);
-    })
-
 var data = {}
 
 const states = [
@@ -130,6 +124,23 @@ colNames.forEach((colName, index) => {
     }
 })
 
-jsonfile.writeFile('data.json', data, function (err) {
-    console.error(err)
-})
+data['target'] = { }
+data['target']['2013'] = { }
+data['target']['2014'] = { }
+data['target']['2015'] = { }
+
+csv().fromFile('PredictByState.csv')
+    .on("end_parsed", function (jsonArrayObj) { //when parse finished, result will be emitted here.
+        jsonArrayObj.forEach(rawData => {
+
+            let state = rawData.State
+            if (state == "Uttarakhand") state = "Uttaranchal"
+            if (state == "Chhattisgarh") state = "Chhatisgarh"
+
+            data['target'][rawData.Year][state] = rawData.Target
+        })
+
+        jsonfile.writeFile('data.json', data, function (err) {
+            console.error(err)
+        })
+    })
