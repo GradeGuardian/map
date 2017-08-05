@@ -59,7 +59,7 @@ states.forEach(stateObj => {
     stateObj.click((e) => {
         persist = true
         activeState = stateObj.data('name')
-        $('#overview-card').fadeIn(1000)
+        $('#overview-card').show()
         $('#overview-title').text(stateObj.data('name'))
         $('#literacy-male').text(literacydata['2011'][stateObj.data('name')].Male)
         $('#literacy-female').text(literacydata['2011'][stateObj.data('name')].Female)
