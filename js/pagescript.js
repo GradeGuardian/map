@@ -225,6 +225,16 @@ $(document).ready(() => {
         }
     })*/
 
+    // Reset button
+    $('#reset-button').click(() => {
+        setPredictionInputs()
+        console.log('done')
+    })
+
+    $('#predict-button').click(() => {
+        
+    })
+
 
     $(".chb").change(function () {
         var checked = $(this).is(':checked');
@@ -254,7 +264,7 @@ function setPredictionInputs() {
     datafields.forEach((datafield, index) => {
         if (datafield.dataName) {
             let value = facilitydata["df" + index]['2015'][activeState]
-            $("#df" + index +"-predict").attr('value', value)
+            $("#df" + index + "-predict").val(value)
         }
     })
 }
