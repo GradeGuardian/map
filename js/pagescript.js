@@ -232,7 +232,26 @@ $(document).ready(() => {
     })
 
     $('#predict-button').click(() => {
-        
+        let data = {}
+        data.State = activeState
+
+        datafields.forEach((datafield, index) => {
+            if (datafield.dataName) {
+                let value = $("#df" + index + "-predict").val()
+                if (datafield.inputType === "slider") value = Number(value) / 100
+
+                data[datafield.dataName] = String(value)
+            }
+        })
+
+        $.ajax({
+            type: 'POST',
+            url: 'http://159.203.94.60/predictByState',
+            data: JSON.stringify(data),
+            success: function (data) { alert('data: ' + data); },
+            contentType: "application/json",
+            dataType: 'json'
+        });
     })
 
 
