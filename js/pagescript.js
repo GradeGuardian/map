@@ -234,7 +234,7 @@ $(document).ready(() => {
     $('#predict-button').click(() => {
         $('.prediction-results').hide(400)
         $('.predict-result').hide()
-        
+
         let data = {}
         data.State = activeState
 
@@ -261,11 +261,11 @@ $(document).ready(() => {
                     $('.current-do').slideDown(1000)
                 })
 
-                if( val > currentRate ) {
+                if (val > currentRate) {
                     console.log('higher', $('.predict-higher'))
                     $('.predict-result').hide()
                     $('.predict-higher').show("slow")
-                } else if ( val < currentRate ) {
+                } else if (val < currentRate) {
                     console.log('lower', $('.predict-lower'))
                     $('.predict-result').hide()
                     $('.predict-lower').show("slow")
@@ -319,22 +319,56 @@ function setGraphs() {
     let highCorr = []
 
     // Sort datafields based on correlation
-    datafields.forEach(datafield => {
-        if(datafield.dataName) {
+    datafields.forEach((datafield, index) => {
+        if (datafield.dataName) {
             let value = correlationData[datafield.dataName]
             value = Number(value)
 
-            if( value >= 0.2 ) {
-                highCorr.push(datafield.dataName)
+            if (value >= 0.2) {
+                highCorr.push("df" + index)
             } else if (value >= 0.1) {
-                medCorr.push(datafield.dataName)
+                medCorr.push("df" + index)
             } else {
-                lowCorr.push(datafield.dataName)
+                lowCorr.push("df" + index)
             }
         }
     })
 
-    console.log(lowCorr, medCorr, highCorr)
+    console.log(processDataForGraph(lowCorr))
+    console.log(processDataForGraph(medCorr))
+    console.log(processDataForGraph(highCorr))
+}
+
+function processDataForGraph(datasets) {
+    let graphData = []
+
+    datasets.forEach(dataset => {
+        let graph = {}
+        graph.label = facilitydata[dataset]['type']
+        graph.borderColor = '#4CAF50'
+        graph.fill = false
+        graph.data = []
+
+        graph.data.push(facilitydata[dataset]['2013'][activeState])
+        graph.data.push(facilitydata[dataset]['2014'][activeState])
+        graph.data.push(facilitydata[dataset]['2015'][activeState])
+
+        graphData.push(graph)
+    })
+
+    let targetGraph = {}
+    targetGraph.label = "% dropout rate"
+    targetGraph.borderColor = "#3F51B5"
+    targetGraph.fill = false
+    targetGraph.data = []
+
+    targetGraph.data.push(facilitydata['target']['2013'][activeState])
+    targetGraph.data.push(facilitydata['target']['2014'][activeState])
+    targetGraph.data.push(facilitydata['target']['2015'][activeState])
+
+    graphData.push(targetGraph)
+
+    return graphData
 }
 
 function isNumberKey(evt) {
