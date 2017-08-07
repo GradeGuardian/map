@@ -124,10 +124,10 @@ colNames.forEach((colName, index) => {
     }
 })
 
-data['target'] = { }
-data['target']['2013'] = { }
-data['target']['2014'] = { }
-data['target']['2015'] = { }
+data['target'] = {}
+data['target']['2013'] = {}
+data['target']['2014'] = {}
+data['target']['2015'] = {}
 
 csv().fromFile('PredictByState.csv')
     .on("end_parsed", function (jsonArrayObj) { //when parse finished, result will be emitted here.
@@ -144,3 +144,15 @@ csv().fromFile('PredictByState.csv')
             console.error(err)
         })
     })
+
+var workbook2 = XLSX.readFile('AttributesAndCorrelations.xlsx')
+var worksheet2 = workbook2.Sheets[workbook2.SheetNames[0]]
+worksheetdata2 = XLSX.utils.sheet_to_json(worksheet2)
+
+let correlationData = {}
+worksheetdata2.forEach(rawData => {
+    correlationData[rawData.Attribute.trim()] = rawData['Correlation ']
+})
+jsonfile.writeFile('correlations.json', correlationData, function (err) {
+    console.error(err)
+})
