@@ -313,6 +313,30 @@ function setPredictionInputs() {
     })
 }
 
+function setGraphs() {
+    let lowCorr = []
+    let medCorr = []
+    let highCorr = []
+
+    // Sort datafields based on correlation
+    datafields.forEach(datafield => {
+        if(datafield.dataName) {
+            let value = correlationData[datafield.dataName]
+            value = Number(value)
+
+            if( value >= 0.2 ) {
+                highCorr.push(datafield.dataName)
+            } else if (value >= 0.1) {
+                medCorr.push(datafield.dataName)
+            } else {
+                lowCorr.push(datafield.dataName)
+            }
+        }
+    })
+
+    console.log(lowCorr, medCorr, highCorr)
+}
+
 function isNumberKey(evt) {
     var charCode = (evt.which) ? evt.which : evt.keyCode;
     if (charCode != 46 && charCode > 31

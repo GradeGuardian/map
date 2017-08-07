@@ -73,6 +73,7 @@ states.forEach(stateObj => {
         $('.predict-result').hide()
 
         setPredictionInputs()
+        setGraphs()
     })
 
     stateObj.changeColor = (newColor) => {
