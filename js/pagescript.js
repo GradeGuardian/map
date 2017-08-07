@@ -334,18 +334,22 @@ function setGraphs() {
         }
     })
 
-    console.log(processDataForGraph(lowCorr))
-    console.log(processDataForGraph(medCorr))
-    console.log(processDataForGraph(highCorr))
+    lowCorrChart.data.datasets = processDataForGraph(lowCorr, '#d32f2f')
+    medCorrChart.data.datasets = processDataForGraph(medCorr, '#FFC107')
+    highCorrChart.data.datasets = processDataForGraph(highCorr, '#4CAF50')
+
+    lowCorrChart.update()
+    medCorrChart.update()
+    highCorrChart.update()
 }
 
-function processDataForGraph(datasets) {
+function processDataForGraph(datasets, color) {
     let graphData = []
 
     datasets.forEach(dataset => {
         let graph = {}
         graph.label = facilitydata[dataset]['type']
-        graph.borderColor = '#4CAF50'
+        graph.borderColor = color
         graph.fill = false
         graph.data = []
 
@@ -357,7 +361,7 @@ function processDataForGraph(datasets) {
     })
 
     let targetGraph = {}
-    targetGraph.label = "% dropout rate"
+    targetGraph.label = "% Dropout Rate"
     targetGraph.borderColor = "#3F51B5"
     targetGraph.fill = false
     targetGraph.data = []
