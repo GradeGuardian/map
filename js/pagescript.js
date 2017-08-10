@@ -258,14 +258,16 @@ $(document).ready(() => {
 
                 $('.api-result').text(val)
                 $('.prediction-results').show(1000, () => {
-                    $('.current-do').slideDown(1000)
+                    $('.current-do').slideDown(1000, () => {
+                        $('.optimal-do').slideDown(1000)
+                    })
                 })
 
-                if (val > currentRate) {
+                if (Number(val) > Number(currentRate)) {
                     console.log('higher', $('.predict-higher'))
                     $('.predict-result').hide()
                     $('.predict-higher').show("slow")
-                } else if (val < currentRate) {
+                } else if (Number(val) < Number(currentRate)) {
                     console.log('lower', $('.predict-lower'))
                     $('.predict-result').hide()
                     $('.predict-lower').show("slow")

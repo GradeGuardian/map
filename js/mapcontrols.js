@@ -66,12 +66,14 @@ states.forEach(stateObj => {
         $('#literacy-female').text(literacydata['2011'][stateObj.data('name')].Female)
         $('#literacy-person').text(literacydata['2011'][stateObj.data('name')].Person)
         $('.dropout-rate').text(facilitydata['target']['2015'][activeState])
+        $('.optimal-dropout-rate').text(facilitydata['optimal_target'][activeState])
         if(activeDatafield) $('#filter-stat-state').text(facilitydata[activeDatafield]['2015'][activeState])
 
         // Hide prediction divs
         $('.prediction-results').hide()
         $('.predict-result').hide()
-
+        $('.optimal-do').hide()
+        
         setPredictionInputs()
         setGraphs()
     })
