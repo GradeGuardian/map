@@ -1,5 +1,5 @@
 #landing-container {
-    height: 100%;
+    height: 100vh;
     overflow: hidden;
     background: rgba(25,5,40,1);
     background: -moz-linear-gradient(top, rgba(25,5,40,1) 0%, rgba(25,5,40,1) 19%, rgba(11,3,43,1) 76%, rgba(4,9,46,1) 100%);
@@ -15,6 +15,28 @@ body {
     padding: 0 !important;
     margin: 0 !important;
     background-color: #F6F4F8 !important;
+}
+
+.landing-main-absolute {
+  z-index: 5;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+}
+
+#brain-photo {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  bottom: 12px;
+  width: 100vw;
+  text-align: center;
+}
+
+#brain-photo img {
+  width: 80vw;
+  max-width: 900px;
+  height: auto;
 }
 
 .bottom-color-band {
