@@ -1,11 +1,6 @@
-* {
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-body {
-    padding: 0 !important;
-    margin: 0 !important;
+#landing-container {
+    height: 100%;
+    overflow: hidden;
     background: rgba(25,5,40,1);
     background: -moz-linear-gradient(top, rgba(25,5,40,1) 0%, rgba(25,5,40,1) 19%, rgba(11,3,43,1) 76%, rgba(4,9,46,1) 100%);
     background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(25,5,40,1)), color-stop(19%, rgba(25,5,40,1)), color-stop(76%, rgba(11,3,43,1)), color-stop(100%, rgba(4,9,46,1)));
@@ -16,10 +11,16 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#190528', endColorstr='#04092e', GradientType=0 );
 }
 
-html {
+body {
     padding: 0 !important;
     margin: 0 !important;
-    height: 100vh;
-    overflow: hidden;
+    background-color: #F6F4F8 !important;
+}
+
+.bottom-color-band {
+    position: absolute;
     width: 100vw;
+    height: 12px;
+    bottom: 0;
+    left: 0;
 }
