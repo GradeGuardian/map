@@ -30,7 +30,7 @@
                 <div class="col align-self-center">
                     <h1 class="text-center text-uppercase white-text">Our AI has crafted a plan to <span class="blue-text">raise the standard</span> of education in India</h1>
                     <div class="row justify-content-center mt-3">
-                        <a class="btn btn-lg btn-outline-blue" href="#firstContentRow">Get started<i class="fa fa-chevron-down ml-1"></i></a>
+                        <a class="btn btn-lg btn-outline-blue" href="#content-start">Get started<i class="fa fa-chevron-down ml-1"></i></a>
                     </div>
                 </div>
 
@@ -40,10 +40,128 @@
         <div class="bottom-color-band purple-gradient"></div>
     </div>
 
-    <div class="container mb-5">
+    <div class="container mb-5" id="content-start">
         <div class="mt-5"></div>
         <div class="card p-3">
             <h1 class="text-center mt-2">Master Plan</h1>
+
+            <p class="content-p">
+                Using data from the District Information System for Education we have developed a plan that will improve the Indian education
+                system and reduce the national dropout rate.
+            </p>
+
+            <p class="content-p">
+                We found that amenities that most likely correlate with school performance include:
+
+                <ol>
+                    <li>Schools with Head Master Room</li>
+                    <li>Schools with Computer & Internet</li>
+                    <li>Schools with Electricity</li>
+                </ol>
+            </p>
+
+            <p class="content-p">
+                Using a trained linear regression model, new dropout rates were predicted for each state as each of the above amenities were
+                increased so that they were standard features of every school. The new predicted rate for each state was
+                lower in all but 4 of the states. The national average decreased by 13.67 percent
+            </p>
+
+            <h2>Our Hypothesis</h2>
+            <p class="content-p">
+                When teachers collaborate, students academically improve. All three of the above amenities can be used by teachers to collaborate.
+                Electricity powers one of the best resources to collaborate, the internet. Head masters help teachers cooperate
+                by setting academic goals and policies for the institution. This plan attempts to maximize the tools for
+                collaboration and predict its effect on students
+            </p>
+
+            <h2>Method</h2>
+            <p class="content-p font-weight-bold">National Dropout rate average: <span class="pink-text">17.05%</span></p>
+            <p class="content-p font-weight-bold">States with the highest dropout rates:</p>
+
+            <div class="row justify-content-center">
+                <table class="table table-hover">
+                    <tr>
+                        <th>State</th>
+                        <th>Dropout Rate (2015)</th>
+                    </tr>
+                    <tr>
+                        <td>Odisha</td>
+                        <td>29.56%</td>
+                    </tr>
+                    <tr>
+                        <td>Tripura</td>
+                        <td>28.42%</td>
+                    </tr>
+                    <tr>
+                        <td>Assam</td>
+                        <td>27.06%</td>
+                    </tr>
+                    <tr>
+                        <td>Karnataka</td>
+                        <td>26.18%</td>
+                    </tr>
+                    <tr>
+                        <td>Bihar</td>
+                        <td>25.90%</td>
+                    </tr>
+                </table>
+            </div>
+
+            <p class="content-p font-weight-bold">Suggested improvements to facilities:
+                <ol>
+                    <li>Increase the number of Head master’s room and head masters to <span class="text-success">100%</span></li>
+                    <li>Increase schools the number of schools with electricity access to <span class="text-success">100%</span></li>
+                    <li>Increase schools the number of schools with Computers and Internet access to <span class="text-success">100%</span></li>
+                </ol>
+            </p>
+
+            <h2>Expected Results</h2>
+
+            <p class="content-p font-weight-bold">National Dropout rate average: <span class="indigo-text">14.72%</span></p>
+            <p class="content-p font-weight-bold">Percent change of National Dropout rate average: <span class="text-success">-14.72%</span></p>
+
+            <p class="content-p font-weight-bold">New expected dropout rates from the states with the highest current dropout rate:</p>
+
+            <div class="row justify-content-center">
+                <table class="table table-hover">
+                    <tr>
+                        <th>State</th>
+                        <th>Expected Dropout Rate</th>
+                        <th>Percent change from 2015</th>
+                    </tr>
+                    <tr>
+                        <td>Odisha</td>
+                        <td>23.16%</td>
+                        <td>-21.65%</td>
+                    </tr>
+                    <tr>
+                        <td>Tripura</td>
+                        <td>21.78%</td>
+                        <td>-23.36%</td>
+                    </tr>
+                    <tr>
+                        <td>Assam</td>
+                        <td>18.58%</td>
+                        <td>-31.34%</td>
+                    </tr>
+                    <tr>
+                        <td>Karnataka</td>
+                        <td>22.24%</td>
+                        <td>-15.05%</td>
+                    </tr>
+                    <tr>
+                        <td>Bihar</td>
+                        <td>17.57%</td>
+                        <td>-32.16%</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <h2 class="pt-4 pb-4 text-center">A more detailed report can be found here</h2>
+            <div class="row justify-content-center mb-5">
+                <a href="#" class="btn btn-lg btn-indigo">GradeGuardian Findings Report</a>
+                <a href="#" class="btn btn-lg btn-red">GradeGuardian Findings Spreadsheet</a>
+            </div>
         </div>
     </div>
 

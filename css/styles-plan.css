@@ -24,3 +24,22 @@ body {
     bottom: 0;
     left: 0;
 }
+
+.content-p {
+    font-size: 18px;
+}
+
+.chromatic {
+  color: transparent;
+  -webkit-transition: text-shadow 2s ease;
+  transition: text-shadow 2s ease;
+}
+.chromatic:nth-of-type(1), .chromatic:nth-of-type(5) {
+  text-shadow: 0 0 2px white, 0 0 1px white, 0.03em 0 0.06em rgba(255, 0, 0, 0.9), -0.03em 0 0.06em rgba(0, 255, 255, 0.9);
+}
+.chromatic:nth-of-type(2), .chromatic:nth-of-type(4) {
+  text-shadow: 0 0 2px white, 0 0 1px white, 0.018em 0 0.036em rgba(255, 0, 0, 0.9), -0.018em 0 0.036em rgba(0, 255, 255, 0.9);
+}
+.chromatic:nth-of-type(3) {
+  text-shadow: 0 0 2px white, 0 0 1px white, 0.003em 0 0.006em rgba(255, 0, 0, 0.9), -0.003em 0 0.006em rgba(0, 255, 255, 0.9);
+}
