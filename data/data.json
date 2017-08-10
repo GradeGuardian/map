@@ -4160,5 +4160,37 @@
             "Uttaranchal": "10.4",
             "West Bengal": "17.8"
         }
+    },
+    "optimal_target": {
+        "National Average": "14.74",
+        "Andhra Pradesh": "14.62",
+        "Arunachal Pradesh": "14.64",
+        "Assam": "18.58",
+        "Bihar": "17.57",
+        "Chhatisgarh": "16.74",
+        "Delhi": "6.01",
+        "Goa": "10.80",
+        "Gujarat": "17.81",
+        "Haryana": "11.29",
+        "Himachal Pradesh": "13.14",
+        "Jammu & Kashmir": "13.01",
+        "Jharkhand": "18.91",
+        "Karnataka": "22.24",
+        "Kerala": "9.75",
+        "Madhya Pradesh": "20.42",
+        "Maharashtra": "11.77",
+        "Manipur": "19.62",
+        "Meghalaya": "13.52",
+        "Mizoram": "20.15",
+        "Nagaland": "14.77",
+        "Odisha": "23.16",
+        "Punjab": "10.84",
+        "Rajasthan": "12.96",
+        "Sikkim": "13.30",
+        "Tamil Nadu": "5.21",
+        "Tripura": "21.78",
+        "Uttar Pradesh": "7.23",
+        "Uttaranchal": "13.23",
+        "West Bengal": "14.50"
     }
 }
