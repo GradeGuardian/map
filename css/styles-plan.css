@@ -6,7 +6,14 @@
 body {
     padding: 0 !important;
     margin: 0 !important;
-    background: #190629;
+    background: rgba(25,5,40,1);
+    background: -moz-linear-gradient(top, rgba(25,5,40,1) 0%, rgba(25,5,40,1) 19%, rgba(11,3,43,1) 76%, rgba(4,9,46,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(25,5,40,1)), color-stop(19%, rgba(25,5,40,1)), color-stop(76%, rgba(11,3,43,1)), color-stop(100%, rgba(4,9,46,1)));
+    background: -webkit-linear-gradient(top, rgba(25,5,40,1) 0%, rgba(25,5,40,1) 19%, rgba(11,3,43,1) 76%, rgba(4,9,46,1) 100%);
+    background: -o-linear-gradient(top, rgba(25,5,40,1) 0%, rgba(25,5,40,1) 19%, rgba(11,3,43,1) 76%, rgba(4,9,46,1) 100%);
+    background: -ms-linear-gradient(top, rgba(25,5,40,1) 0%, rgba(25,5,40,1) 19%, rgba(11,3,43,1) 76%, rgba(4,9,46,1) 100%);
+    background: linear-gradient(to bottom, rgba(25,5,40,1) 0%, rgba(25,5,40,1) 19%, rgba(11,3,43,1) 76%, rgba(4,9,46,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#190528', endColorstr='#04092e', GradientType=0 );
 }
 
 html {
